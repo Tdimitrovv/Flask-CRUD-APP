@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+ 
+ 
+{% block body %}
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Name of task</td>
+        <td><input type = "text" name = "name_of_task" value="{{todo.name_of_task}}" class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>ID of person</td>
+        <td><input type = "text" name = "id_of_person" class="form-control" value="{{todo.id_of_person}}" /></td>
+    </tr>
+
+
+    <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+       
+    </tr>
+</table>
+  
+  </form>
+
+</div>
+{% endblock %}
+
+

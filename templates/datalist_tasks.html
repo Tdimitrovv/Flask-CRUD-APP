@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+{% block title %} Home {% endblock %}
+ 
+{% block body %}
+
+<div class="container">
+ <table class="table">
+     <thead style="background-color: brown;color: aliceblue;  ">
+
+        <th>ID of task</th>  
+        <th>ID of person</th>
+        <th>Name of task</th>
+        <th>Actions</th>
+
+
+    </thead>
+    <br>
+   </br>
+
+   <tbody>
+    {% for todos in todo %}
+    <tr
+    style="background-color: green;"
+    ><td>{{ loop.index }}</td>
+    <td>{{todos.id_of_person}}</td>
+    <td>{{todos.name_of_task}}</td>
+    <td> <span style="font-size: 24px;color:green;">
+       <a href="/{{todos.id_of_task}}/edit_task"> <i class="fas fa-edit"></i></a> </span>
+        | <span style="font-size: 24px;color:red;">  
+          <a href="/{{todos.id_of_task}}/delete_task"> <i class="fas fa-trash-alt"></i></a></span></td>
+    {% endfor %}
+   </tbody>
+ </table>
+  
+</div>
+
+
+
+{% endblock %}
